@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+let data = require('../public/data/data');
 
 let count = 0;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  count++;
+  count = data.count;
   let data = {'data':'test','count':`${count}`};
   res.send(JSON.stringify(data));
 });
